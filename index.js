@@ -40,7 +40,7 @@ app.get("/:id", (req, res) => {
   const { id } = req.params;
 
   const usuarioEncontrado = usuarios.find((usuario) => {
-    return usuario.id === id;
+    return usuario.id == id;
   });
 
   return res.json({
@@ -72,7 +72,7 @@ app.put("/:id", (req, res) => {
   const { nombre, apellido, username } = req.body;
 
   const usuarioEncontrado = usuarios.find((usuario) => {
-    return usuario.id === id;
+    return usuario.id == id;
   });
 
   (usuarioEncontrado.nombre = nombre),
@@ -89,7 +89,7 @@ app.delete("/:id", (req, res) => {
   const { id } = req.params;
 
   const usuarioEncontrado = usuarios.find((usuario) => {
-    return usuario.id === id;
+    return usuario.id == id;
   });
 
   const usuarioEliminado = usuarios.splice(
